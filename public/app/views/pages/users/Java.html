@@ -1,0 +1,70 @@
+<div>
+	<h1 style="color: green">  Java program to implement basic stack operations </h1>
+	<br><br><br>
+	<div style="font-size: 18px">
+class Stack { <br>
+	<p style="padding-left: 50px ">static final int MAX = 1000; <br>
+	int top; <br>
+	int a[] = new int[MAX]; // Maximum size of Stack <br><br>
+
+	boolean isEmpty() <br>
+	{ </p>
+		<p style="padding-left: 100px ">return (top < 0);</p> 
+	<p style="padding-left: 50px ">}</p> 
+	<p style="padding-left: 50px ">Stack() <br>
+	{ <br>
+		<p style="padding-left: 100px ">top = -1; </p>
+	<p style="padding-left: 50px ">}</p> </p><br>
+
+	<p style="padding-left: 50px ">boolean push(int x) <br>
+	{ </p>
+		<p style="padding-left: 100px ">if (top >= (MAX - 1)) { </p>
+			<p style="padding-left: 150px ">System.out.println("Stack Overflow"); <br>
+			return false; </p>
+		<p style="padding-left: 100px ">} </p>
+		<p style="padding-left: 100px ">else { </p>
+			<p style="padding-left: 150px ">a[++top] = x; <br>
+			System.out.println(x + " pushed into stack"); <br>
+			return true; </p>
+		<p style="padding-left: 100px ">}</p> 
+	<p style="padding-left: 50px ">}</p><br> 
+
+	<p style="padding-left: 50px ">int pop() <br>
+	{ </p>
+		<p style="padding-left: 100px ">if (top < 0) { </p>
+			<p style="padding-left: 150px ">System.out.println("Stack Underflow"); <br>
+			return 0; </p>
+		<p style="padding-left: 100px ">}</p> 
+		<p style="padding-left: 100px ">else { </p>
+			<p style="padding-left: 150px ">int x = a[top--]; <br>
+			return x; </p>
+		<p style="padding-left: 100px ">} 
+	<p style="padding-left: 50px ">} </p></p><br>
+
+	<p style="padding-left: 50px ">int peek() <br>
+	{ </p>
+		<p style="padding-left: 100px ">if (top < 0) { </p>
+			<p style="padding-left: 150px ">System.out.println("Stack Underflow"); <br>
+			return 0; </p>
+		<p style="padding-left: 100px ">}</p> 
+		<p style="padding-left: 100px ">else { </p>
+			<p style="padding-left: 150px ">int x = a[top]; <br>
+			return x; </p>
+		<p style="padding-left: 100px ">} </p>
+	<p style="padding-left: 50px ">} </p>
+} <br><br><br>
+
+<p  style="color: green">// Driver code</p> 
+class Main { <br>
+	<p style="padding-left: 50px ">public static void main(String args[]) <br>
+	{ </p>
+		<p style="padding-left: 100px ">Stack s = new Stack(); <br>
+		s.push(10); <br>
+		s.push(20); <br>
+		s.push(30); <br>
+		System.out.println(s.pop() + " Popped from stack");</p> 
+	<p style="padding-left: 50px ">}</p> 
+} <br><br><br>
+
+	</div>
+</div>

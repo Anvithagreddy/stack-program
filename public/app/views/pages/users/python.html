@@ -1,0 +1,43 @@
+<div>
+	<h1 style="color: green">  Python program to implement basic stack operations </h1>
+	<br><br><br>
+	<div style="font-size: 18px">
+
+<p  style="color: green"># import maxsize from sys module </p>
+<p  style="color: green"># Used to return -infinite when stack is empty </p>
+from sys import maxsize <br><br>
+<p  style="color: green"># Function to create a stack. It initializes size of stack as 0 </p>
+def createStack(): <br>
+	<p style="padding-left: 50px ">stack = [] <br>
+	return stack </p>
+
+<p style="color: green"># Stack is empty when stack size is 0</p> 
+def isEmpty(stack): <br>
+	<p style="padding-left: 50px ">return len(stack) == 0</p>
+
+<p style="color: green"># Function to add an item to stack. It increases size by 1 </p>
+def push(stack, item): <br>
+	<p style="padding-left: 50px ">stack.append(item) <br>
+	print(item + " pushed to stack ") </p>
+	
+<p style="color: green"># Function to remove an item from stack. It decreases size by 1 </p>
+def pop(stack): <br>
+	<p style="padding-left: 50px ">if (isEmpty(stack)): <p style="padding-left: 100px ">return str(-maxsize -1) # return minus infinite</p></p> 
+	<br>
+	<p style="padding-left: 50px ">return stack.pop()</p> 
+
+<p style="color: green"># Function to return the top from stack without removing it</p> 
+def peek(stack): <br>
+	<p style="padding-left: 50px ">if (isEmpty(stack)): <p style="padding-left: 100px ">return str(-maxsize -1) # return minus infinite </p>
+	return stack[len(stack) - 1]</p> 
+
+<p style="color: green"># Driver program to test above functions</p>	 
+stack = createStack() <br>
+push(stack, str(10)) <br>
+push(stack, str(20)) <br>
+push(stack, str(30)) <br>
+print(pop(stack) + " popped from stack")<br> 
+<br><br><br>
+	</div>
+
+</div>

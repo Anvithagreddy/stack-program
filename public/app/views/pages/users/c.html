@@ -1,0 +1,76 @@
+<div>
+	<h1 style="color: green"> C program for array implementation of stack </h1>
+	<br><br><br>
+	<div style="font-size: 18px">
+
+#include <&nbsplimits.h&nbsp><br> 
+#include <&nbspstdio.h&nbsp> <br>
+#include <&nbspstdlib.h&nbsp> <br>
+<br>
+<p  style="color: green">// A structure to represent a stack<br></p> 
+struct Stack { 
+	<p style="padding-left: 50px ">int top;<br> 
+	unsigned capacity; <br>
+	int* array; </p>
+};<br><br> 
+
+<p  style="color: green">// function to create a stack of given capacity. It initializes size of stack as 0 </p>
+struct Stack* createStack(unsigned capacity) <br>
+{ <br>
+	<p style="padding-left: 50px ">struct Stack* stack = (struct Stack*)malloc(sizeof(struct Stack));<br> 
+	stack->capacity = capacity; <br>
+	stack->top = -1; <br>
+	stack->array = (int*)malloc(stack->capacity * sizeof(int)); <br>
+	return stack; </p>
+} <br><br>
+
+<p  style="color: green">// Stack is full when top is equal to the last index </p>
+int isFull(struct Stack* stack) <br>
+{ <br>
+	<p style="padding-left: 50px ">return stack->top == stack->capacity - 1; </p>
+} <br><br>
+
+<p  style="color: green">// Stack is empty when top is equal to -1 </p>
+int isEmpty(struct Stack* stack) <br>
+{ <br>
+	<p style="padding-left: 50px ">return stack->top == -1; </p>
+} <br><br>
+
+<p  style="color: green">// Function to add an item to stack. It increases top by 1 </p>
+void push(struct Stack* stack, int item) <br>
+{ <br>
+	<p style="padding-left: 50px ">if (isFull(stack))<p style="padding-left: 100px ">return; </p></p>
+	<p style="padding-left: 50px ">stack->array[++stack->top] = item; <br>
+	printf("%d pushed to stack\n", item); </p>
+} <br><br>
+
+<p  style="color: green">// Function to remove an item from stack. It decreases top by 1 </p>
+int pop(struct Stack* stack) <br>
+{ <br>
+	<p style="padding-left: 50px ">if (isEmpty(stack)) <p style="padding-left: 100px ">return INT_MIN;</p></p>
+	<p style="padding-left: 50px ">return stack->array[stack->top--]; </p>
+} <br><br>
+
+<p  style="color: green">// Function to return the top from stack without removing it </p>
+int peek(struct Stack* stack) <br>
+{ <br>
+	<p style="padding-left: 50px ">if (isEmpty(stack)) <p style="padding-left: 100px ">return INT_MIN; </p></p>
+	<p style="padding-left: 50px ">return stack->array[stack->top]; </p>
+} <br><br>
+
+<p  style="color: green">// Driver program to test above functions 
+int main() <br>
+{ <br>
+	<p style="padding-left: 50px ">struct Stack* stack = createStack(100); <br><br>
+
+	push(stack, 10); <br>
+	push(stack, 20); <br>
+	push(stack, 30); <br><br>
+
+	printf("%d popped from stack\n", pop(stack)); <br><br>
+
+	return 0; </p>
+} <br><br><br>
+
+	</div>
+</div>

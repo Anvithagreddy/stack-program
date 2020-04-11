@@ -1,0 +1,72 @@
+<div>
+	<h1 style="color: green"> C++ program to implement basic stack operations </h1>
+	<br><br><br>
+<div style="font-size: 18px">
+using namespace std; 
+<br><br>
+#define MAX 1000 
+<br><br>
+class Stack { 
+<br>
+	<p style="padding-left: 50px ">int top;</p> 
+<br>
+public: 
+<br>
+	<p style="padding-left: 50px ">int a[MAX]; // Maximum size of Stack 
+<br><br>
+	Stack() { top = -1; } <br>
+	bool push(int x); <br>
+	int pop(); <br>
+	int peek(); <br>
+	bool isEmpty(); <br>
+</p>
+}; 
+<br><br>
+
+bool Stack::push(int x) <br>
+{ <br>
+	<p style="padding-left: 50px ">if (top >= (MAX - 1)) { <p style="padding-left: 100px ">cout << "Stack Overflow"; <br>
+		return false; </p></p>
+	<p style="padding-left: 50px ">} else { <p style="padding-left: 100px ">a[++top] = x; <br>
+		cout << x << " pushed into stack\n"; <br>
+		return true; </p>
+	<p style="padding-left: 50px ">} </p>
+} </p>
+<br>
+int Stack::pop()<br> 
+{ 
+	<p style="padding-left: 50px ">if (top < 0) { <p style="padding-left: 100px ">cout << "Stack Underflow"; <br>
+		return 0; </p></p>
+	<p style="padding-left: 50px ">} else { <p style="padding-left: 100px ">int x = a[top--]; <br>
+		return x; </p>
+	<p style="padding-left: 50px ">} </p>
+} </p>
+<br>
+int Stack::peek() <br>
+{ 
+	<p style="padding-left: 50px ">if (top < 0) { <p style="padding-left: 100px ">cout << "Stack is Empty"; <br>
+		return 0; </p></p>
+	<p style="padding-left: 50px ">} else { <p style="padding-left: 100px ">int x = a[top]; <br>
+		return x; </p>
+	<p style="padding-left: 50px ">} </p>
+} </p>
+<br>
+bool Stack::isEmpty() <br>
+{ 
+	<p style="padding-left: 50px ">return (top < 0); </p>
+} 
+<br><br>
+// Driver program to test above functions<br><br> 
+int main() <br>
+{ 
+	<p style="padding-left: 50px ">class Stack s;<br> 
+	s.push(10); <br>
+	s.push(20); <br>
+	s.push(30); <br>
+	cout << s.pop() << " Popped from stack\n"; <br><br>
+
+	return 0; </p>
+} 
+<br><br><br>
+</div>
+</div>
